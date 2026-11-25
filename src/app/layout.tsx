@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-
 import LayoutShell from "@/components/layout/layout-shell";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "Manajemen Siswa",
-  description: "Aplikasi manajemen siswa untuk kelas industri",
+  title: "SchoolApp - SMK Telekomunikasi Tunas Harapan",
+  description: "Aplikasi manajemen siswa dan dashboard sekolah",
 };
 
 export default function RootLayout({
@@ -22,7 +14,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${poppins.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased">
         <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
