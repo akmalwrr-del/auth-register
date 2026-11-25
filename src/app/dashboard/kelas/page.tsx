@@ -20,10 +20,11 @@ export default function KelasPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {kelasList.map((k) => (
+        {kelasList.map((k, idx) => (
           <div
             key={k.name}
-            className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]"
+            style={{ animationDelay: `${idx * 75}ms` }}
+            className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 fill-mode-both transition-all hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex items-start justify-between">
               <div>

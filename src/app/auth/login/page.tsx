@@ -49,10 +49,10 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#eef4fc] p-4">
-      <div className="w-full max-w-[380px] bg-[#f8fafc]/90 backdrop-blur-md rounded-2xl shadow-xl shadow-blue-900/5 p-8 border border-white">
+      <div className="w-full max-w-[380px] bg-[#f8fafc]/90 backdrop-blur-md rounded-2xl shadow-xl shadow-blue-900/5 p-8 border border-white animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-4 duration-500">
 
         <div className="flex flex-col items-center mb-6">
-          <div className="w-14 h-14 bg-[#4382ec] text-white rounded-full flex items-center justify-center mb-3 shadow-md shadow-blue-400/40">
+          <div className="w-14 h-14 bg-[#4382ec] text-white rounded-full flex items-center justify-center mb-3 shadow-md shadow-blue-400/40 animate-in zoom-in-75 duration-500 delay-100 fill-mode-both">
             <User className="w-7 h-7 stroke-[2.5]" />
           </div>
           <h1 className="text-2xl font-bold text-gray-800">Welcome Back</h1>
@@ -61,7 +61,7 @@ export default function LoginPage() {
 
         {message && (
           <div
-            className={`mb-4 p-2.5 rounded-xl text-center text-xs font-medium ${message.isError
+            className={`mb-4 p-2.5 rounded-xl text-center text-xs font-medium animate-in fade-in-0 slide-in-from-top-2 duration-200 ${message.isError
               ? "bg-red-100 text-red-600 border border-red-200"
               : "bg-emerald-100 text-emerald-600 border border-emerald-200"
               }`}
@@ -111,7 +111,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-[#1d6bf3] hover:bg-blue-600 disabled:bg-blue-300 text-white font-semibold text-xs rounded-xl shadow-md shadow-blue-500/30 transition duration-200 mt-2"
+            className="w-full py-3 bg-[#1d6bf3] hover:bg-blue-600 disabled:bg-blue-300 text-white font-semibold text-xs rounded-xl shadow-md shadow-blue-500/30 transition duration-200 active:scale-[0.98] mt-2"
           >
             {loading ? "Logging in..." : "Login"}
           </button>

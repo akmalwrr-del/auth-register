@@ -31,7 +31,7 @@ export default function LayoutShell({
       {/* Mobile Sidebar Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs md:hidden"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs animate-in fade-in-0 duration-200 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -70,7 +70,10 @@ export default function LayoutShell({
           </div>
         </div>
 
-        <main className="flex-1 p-5 md:p-8 overflow-y-auto">
+        <main
+          key={pathname}
+          className="flex-1 p-5 md:p-8 overflow-y-auto animate-in fade-in-0 slide-in-from-bottom-2 duration-300 ease-out"
+        >
           {children}
         </main>
       </div>

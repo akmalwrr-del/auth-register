@@ -79,7 +79,7 @@ export default function DashboardPage() {
       {/* 4 Stats Cards */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {/* Card 1: Siswa */}
-        <div className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="group flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-75 fill-mode-both transition-all hover:-translate-y-1 hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">Siswa</p>
@@ -87,7 +87,7 @@ export default function DashboardPage() {
                 Aktif
               </span>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-500 text-white shadow-sm shadow-blue-500/20">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-500 text-white shadow-sm shadow-blue-500/20 transition-transform duration-200 group-hover:scale-105">
               <Users size={22} />
             </div>
           </div>
@@ -98,12 +98,12 @@ export default function DashboardPage() {
         </div>
 
         {/* Card 2: Kelas */}
-        <div className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="group flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-100 fill-mode-both transition-all hover:-translate-y-1 hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">Kelas</p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500 text-white shadow-sm shadow-emerald-500/20">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500 text-white shadow-sm shadow-emerald-500/20 transition-transform duration-200 group-hover:scale-105">
               <GraduationCap size={22} />
             </div>
           </div>
@@ -114,12 +114,12 @@ export default function DashboardPage() {
         </div>
 
         {/* Card 3: Rata-rata/Kelas */}
-        <div className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="group flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-150 fill-mode-both transition-all hover:-translate-y-1 hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">Rata-rata/Kelas</p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-500 text-white shadow-sm shadow-amber-500/20">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-500 text-white shadow-sm shadow-amber-500/20 transition-transform duration-200 group-hover:scale-105">
               <TrendingUp size={22} />
             </div>
           </div>
@@ -130,12 +130,12 @@ export default function DashboardPage() {
         </div>
 
         {/* Card 4: Pelanggaran */}
-        <div className="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="group flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-200 fill-mode-both transition-all hover:-translate-y-1 hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">Pelanggaran</p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500 text-white shadow-sm shadow-red-500/20">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500 text-white shadow-sm shadow-red-500/20 transition-transform duration-200 group-hover:scale-105">
               <AlertTriangle size={22} />
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function DashboardPage() {
       {/* Charts Section */}
       <div className="flex flex-col gap-6">
         {/* Card: Siswa per Kelas / Gender Distribution */}
-        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-150 fill-mode-both">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BarChart2 size={20} className="text-blue-600" />
@@ -163,7 +163,7 @@ export default function DashboardPage() {
               onClick={() =>
                 setChartView((prev) => (prev === "bar" ? "pie" : "bar"))
               }
-              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
+              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all duration-200 active:scale-95 ${
                 chartView === "pie"
                   ? "border-blue-500 bg-blue-50 text-blue-600"
                   : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
@@ -175,7 +175,7 @@ export default function DashboardPage() {
 
           {/* View 1: Bar Chart (Image 1) */}
           {chartView === "bar" ? (
-            <div className="relative pt-4 pb-2">
+            <div className="relative pt-4 pb-2 animate-in fade-in-0 zoom-in-95 duration-300">
               <div className="flex h-64 w-full">
                 {/* Y-axis labels */}
                 <div className="flex flex-col justify-between pr-3 text-right text-xs font-medium text-slate-400">
@@ -207,7 +207,7 @@ export default function DashboardPage() {
                         style={{ width: "18%" }}
                       >
                         {/* Tooltip on hover */}
-                        <div className="absolute -top-8 hidden rounded bg-slate-800 px-2 py-0.5 text-xs font-medium text-white shadow group-hover:block">
+                        <div className="absolute -top-8 hidden rounded bg-slate-800 px-2 py-0.5 text-xs font-medium text-white shadow group-hover:block animate-in fade-in-0 zoom-in-95 duration-150">
                           {item.count} Siswa
                         </div>
 
@@ -232,7 +232,7 @@ export default function DashboardPage() {
             </div>
           ) : (
             /* View 2: Donut / Pie Chart (Image 2) */
-            <div className="flex flex-col items-center justify-center py-6">
+            <div className="flex flex-col items-center justify-center py-6 animate-in fade-in-0 zoom-in-95 duration-300">
               <p className="text-sm font-semibold text-blue-600 mb-2">
                 Laki-laki (60.0%)
               </p>
@@ -302,7 +302,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Card: Jenis Kelamin (Pie Chart) */}
-        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-200 fill-mode-both">
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Users size={20} className="text-blue-600" />
@@ -320,7 +320,7 @@ export default function DashboardPage() {
 
               {/* Hover tooltip */}
               {hoveredGender && (
-                <div className="pointer-events-none absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-slate-800/90 px-3 py-1.5 text-xs font-medium text-white shadow-md whitespace-nowrap">
+                <div className="pointer-events-none absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-slate-800/90 px-3 py-1.5 text-xs font-medium text-white shadow-md whitespace-nowrap animate-in fade-in-0 zoom-in-95 duration-150">
                   {hoveredGender === "Laki-laki"
                     ? "Laki-laki: 6 Siswa (60.0%)"
                     : "Perempuan: 4 Siswa (40.0%)"}
@@ -461,7 +461,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Card 3: Jenis Pelanggaran */}
-        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+        <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-in fade-in-0 slide-in-from-bottom-3 duration-500 delay-300 fill-mode-both">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-amber-600">
@@ -477,11 +477,11 @@ export default function DashboardPage() {
             </span>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-2.5">
             {violationTypes.map((item) => (
               <div
                 key={item.name}
-                className="flex items-center justify-between gap-4"
+                className="-mx-2 flex items-center justify-between gap-4 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-slate-50"
               >
                 <div className="flex items-center gap-3">
                   <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${item.dotColor}`} />
